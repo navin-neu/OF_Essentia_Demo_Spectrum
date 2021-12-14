@@ -26,15 +26,15 @@ Click the "Update" button. You should now see a number of new files in OF_Essent
 
 ### 3) Import Essentia in config.make
 
-In the config.make file you will want to set these parameters to the following:
+In the config.make file set these parameters to the following:
 
 PROJECT_LDFLAGS += -L/usr/local/lib -lessentia -lfftw3 -lyaml -lavcodec -lavformat -lavutil -lsamplerate -ltag -lfftw3f -lchromaprint -lavresample
 
 PROJECT_CFLAGS = -pipe -Wall -O2 -fPIC -I/usr/local/include/essentia/ -I/usr/local/include/essentia/scheduler/ -I/usr/local/include/essentia/streaming/  -I/usr/local/include/essentia/utils -I/usr/include/taglib -I/usr/include/
 
-Make sure that PROJECT_LDFLAGS is assigned with += and that neither line is commented out (they will be commented out by default).
+Make sure that the values for PROJECT_LDFLAGS are assigned with += and that neither parameter is commented out (they will be commented out by default).
 
-You should now be able to build the project using "make -j" and run the project using "make run". If you get a build error mentioning that your OF install can't be found check the OF_ROOT parameter in config.make and try setting it to the *absolute* path of your openframeworks root folder. If the build was successful, you will see a "bin" folder under the main project folder. It is possible to copy the this folder to any other device of the same platform and run the project by running the executable found within.
+You should now be able to build the project using "make -j" and run the project using "make run". If you get a build error mentioning that your OF install can't be found check the OF_ROOT parameter in config.make and try setting it to the *absolute* path of your openframeworks root folder. If the build was successful, you will see a "bin" folder under the main project folder. It is possible to copy this folder to any other device of the same platform and run the project by running the executable found within.
 
 ### 4) Setting up Include Paths in VS Code
 
